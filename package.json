@@ -1,6 +1,6 @@
 {
   "name": "@tzg/ng-shared",
-  "version": "1.0.0-SNAPSHOT",
+  "version": "1.0.2",
   "description": "angular shared node module",
   "main": "dist/index.js",
   "jsnext:main": "dist/index.js",
