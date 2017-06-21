@@ -1,0 +1,27 @@
+<!-- navigation menu -->
+<ul class="menu" [hidden]="hidden">
+  <ng-container *ngIf="databind && !menuTemplate">
+    <li *ngFor="let item of databind">
+      <a *ngIf="item.route" [routerLink]="item.route" routerLinkActive="active">
+        <span *ngIf="item.icon" class="icon glyphicon {{item.icon}}"></span>
+        <span class="text">{{item.name}}</span>
+      </a>
+      <a *ngIf="!item.route && item.children.length > 0" (click)="item.childrenShow = !item.childrenShow">
+        <span *ngIf="item.icon" class="icon glyphicon {{item.icon}}"></span>
+        <span class="text">{{item.name}}</span>
+        <span class="arrow pull-right glyphicon {{item.childrenShow ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right'}}"></span>
+      </a>
+      <ul *ngIf="!item.route && item.children.length > 0" [hidden]="!item.childrenShow">
+        <li *ngFor="let child of item.children">
+          <a class="level2" [routerLink]="child.route" routerLinkActive="active">
+            <span class="text">{{child.name}}</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ng-container>
+  <ng-container *ngIf="menuTemplate"
+    [ngTemplateOutlet]="menuTemplate"
+    [ngOutletContext]="{ $implicit: databind, databind: databind }">
+  </ng-container>
+</ul>

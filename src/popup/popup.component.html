@@ -1,0 +1,14 @@
+<p-dialog [(visible)]="visible" modal="modal" [responsive]="true" [width]="300" [resizable]="false" [closable]="false">
+  <p-header>
+    {{title}}<span *ngIf="timer !== 0">({{timer}})</span>
+  </p-header>
+  <p>{{message}}</p>
+  <p-footer>
+    <div class="clearfix text-right">
+      <button type="button" pButton icon="fa-close" class="ui-button-danger" (click)="onCancelClick()" 
+        [label]="cancelText" *ngIf="type===remindType.confirm"></button>
+      <button type="button" pButton icon="fa-check" class="ui-button-primary" (click)="onOkClick()" 
+        [label]="okText"></button>
+    </div>
+  </p-footer>
+</p-dialog>
