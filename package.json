@@ -1,0 +1,44 @@
+{
+  "name": "@tzg/web-shared",
+  "version": "1.0.1",
+  "description": "web-shared module",
+  "main": "dist/index.js",
+  "jsnext:main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "inline": "gulp inline",
+    "build": "npm run clean && npm run inline && .\\node_modules\\.bin\\ngc -p tsconfig.json && rimraf temp"
+  },
+  "dependencies": {
+    "@angular/animations": "^4.0.0",
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/forms": "^4.0.0",
+    "@angular/http": "^4.0.0",
+    "@angular/platform-browser": "^4.0.0",
+    "@angular/platform-browser-dynamic": "^4.0.0",
+    "@angular/router": "^4.0.0",
+    "bootstrap": "^3.3.7",
+    "core-js": "^2.4.1",
+    "font-awesome": "^4.7.0",
+    "primeng": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.11"
+  },
+  "devDependencies": {
+    "@angular/compiler-cli": "^4.0.3",
+    "@types/lodash": "~4.14.66",
+    "@types/node": "~6.0.60",
+    "@types/source-map": "^0.5.0",
+    "gulp": "^3.9.1",
+    "gulp-inline-ng2-template": "^4.0.0",
+    "rimraf": "^2.5.1",
+    "ts-node": "~2.0.0",
+    "typescript": "~2.3.0"
+  }
+}

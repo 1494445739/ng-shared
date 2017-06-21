@@ -1,0 +1,20 @@
+<header class="header" [hidden]="hidden">
+  <div class="logo"></div>
+  <h4 class="title">{{title}}</h4>
+
+  <div class="user pull-right">
+    <span class="user-info" (click)="showUserMenu()">
+      {{greet}}, {{username}} <span class="glyphicon glyphicon-user"></span>
+    </span>
+    <div class="user-menu" [hidden]="!userMenuShow">
+      <ng-container *ngIf="usermenuTemplate"
+        [ngTemplateOutlet]="usermenuTemplate" 
+        [ngOutletContext]="{ $implicit: null }">
+      </ng-container> 
+      <a class="menu-item" (click)="doExitClick()">
+        <span class="glyphicon glyphicon-off"></span>
+        <span class="text">退出登录</span>
+      </a>
+    </div>
+  </div>
+</header>
