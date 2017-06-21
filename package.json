@@ -1,7 +1,7 @@
 {
-  "name": "@tzg/web-shared",
-  "version": "1.0.1",
-  "description": "web-shared module",
+  "name": "@tzg/ng-shared",
+  "version": "1.0.0-SNAPSHOT",
+  "description": "angular shared node module",
   "main": "dist/index.js",
   "jsnext:main": "dist/index.js",
   "types": "dist/index.d.ts",
