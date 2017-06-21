@@ -1,1 +1,1 @@
-"# ng2-shared" 
+# ng2-shared
